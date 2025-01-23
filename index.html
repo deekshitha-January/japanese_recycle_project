@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improved Layout with Enlarging Images</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    .circle-container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+    /* Images */
+    .circle-container img {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .circle-container img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      z-index: 10; /* Ensure hovered images appear on top */
+    }
+    .circle-container .img1 { top: -50px; left: 50%; transform: translate(-50%, 0); }
+    .circle-container .img2 { top: 30%; left: 100%; transform: translate(-50%, -50%); }
+    .circle-container .img3 { top: 70%; left: 100%; transform: translate(-50%, -50%); }
+    .circle-container .img4 { bottom: -50px; left: 50%; transform: translate(-50%, 0); }
+    .circle-container .img5 { top: 70%; left: 0%; transform: translate(-50%, -50%); }
+    .circle-container .img6 { top: 30%; left: 0%; transform: translate(-50%, -50%); }
+    /* Center Text Block */
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      line-height: 1.6;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      height: 280px; /* Increased height to fit text */
+      z-index: 5; /* Lower than images */
+      overflow: auto; /* Allow scrolling if text overflows */
+    }
+  </style>
+</head>
+<body>
+  <div class="circle-container">
+    <!-- Images -->
+    <img src="images/tree_cut.avif" alt="Image 1" class="img1">
+    <img src="images/papaer.jpg" alt="Image 2" class="img2">
+    <img src="images/own_bag.jpg" alt="Image 3" class="img3">
+    <img src="images/bag_2.jpg" alt="Image 4" class="img4">
+    <img src="images/light_off.webp" alt="Image 5" class="img5">
+    <img src="images/water_watse.jpg" alt="Image 6" class="img6">
+    <!-- Center Text -->
+    <div class="text">
+      わたしはだれかへやにいないとき、でんきとせんぷうきをけすようにしています。<br>
+      かいものにじぶんのバッグをもっているようにしています。スーパーのふくろをもらわないようにしています。<br>
+      かいもののとき、たいせつなものをかうようにしています。<br>
+      かおをあらうためにマグでおゆをいれます。シャワーをつかわないので、みずをたくさんださないようにしています。<br>
+      あねのノートをつかうようにしています。<br>
+      うちのちかくにあるきをだれかきらないようにしています。<br>
+    </div>
+  </div>
+</body>
+</html>
